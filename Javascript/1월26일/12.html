@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window.setInterval 메서드</title>
+    <script language = "javascript">
+       
+       var val=setInterval(sayHello, 1000);
+       var count =0;
+
+       function sayHello(){
+            alert("안녕하세요 setInterval 메서드가 실행해 준 함수입니다.");
+            
+            count+=1;
+
+            if(count==5){
+        clearInterval(val);
+        }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
