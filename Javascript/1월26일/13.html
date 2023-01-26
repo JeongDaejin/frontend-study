@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글씨 바꿔주기</title>
+    <script language = "javascript">
+        
+
+        function outPut(){
+            // getElemntById 메서드를 통해 텍스트에 입력된 Id를 가져옴
+            var textBox = document.getElementById("myName").value;
+            var color = document.getElementById("color").value;
+            var size = document.getElementById("size").value;
+            var letter = document.getElementsByName("letter");
+            var letterCheck = [];
+
+            for(var i=0; i<letter.length; i++) {
+                 if(letter[i].checked) {
+                     letterCheck.push(letter[i].value);
+                 }
+             }
+
+            for(var i =0; i<letter.length;i++){
+                if(letterCheck[i]=="cancel")
+                {
+                    textBox=textBox.strike();
+                }
+                if(letterCheck[i]=="big"){
+                    textBox=textBox.big();
+                }
+                if(letterCheck[i]=="small"){
+                    textBox=textBox.small();
+                }
+                if(letterCheck[i]=="bold"){
+                    textBox=textBox.bold();
+                }
+                if(letterCheck[i]=="italic"){
+                    textBox=textBox.italics();
+                }
+                if(letterCheck[i]=="up"){
+                    textBox=textBox.sup();
+                }
+                if(letterCheck[i]=="down"){
+                    textBox=textBox.sub();
+                }
+                if(letterCheck[i]=="lower"){
+                    textBox=textBox.toLowerCase();
+                }
+                if(letterCheck[i]=="upper"){
+                    textBox=textBox.toUpperCase();
+                }
+                
+            }
+
+            textBox = textBox.fontcolor(color);
+            textBox = textBox.fontsize(size);
+            
+            document.getElementById("result").innerHTML=textBox;
+        }
+
+
+
+
+
+        // function color()
+        // {
+        //     var arrColor=document.getElementsByName("color");
+
+        //     for(var i=0; i<arrColor.length; i++){
+        //         if(arrColor[i].value == "빨강")
+        //         {
+        //             result.style.color("red");
+        //             var result = document.getElementById("result").innerText=textBox
+
+        //              break;
+        //         }
+        //     }
+
+
+        // }
+
+        // function size()
+        // {
+
+        // }
+
+        
+
+    </script>
+</head>
+<body>
+    <input type="text" id="myName">
+    <input type="button" value="미리 보기" onclick="outPut()"><br>
+
+    <p>색상: <select id="color">
+        <option value="red" >빨강</option>
+        <option value="blue" >파랑</option>
+        <option value="yellow" >노랑</option>
+    </select></p>
+   
+    <p>크기:  <select id="size">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select></p>
+    
+        <input type="checkbox" name ="letter" value="cancel" > 취소선
+        <input type="checkbox" name ="letter" value="big" > 크게
+        <input type="checkbox" name ="letter" value="small" > 작게
+        <input type="checkbox" name ="letter" value="bold" > 두껍게
+        <input type="checkbox" name ="letter" value="italic" > 기울임<br>
+        <input type="checkbox" name ="letter" value="up" > 위첨자
+        <input type="checkbox" name ="letter" value="down" > 아래첨자
+        <input type="checkbox" name ="letter" value="lower" > 소문자로
+        <input type="checkbox" name ="letter" value="upper" > 대문자로
+        
+        <div id ="result"></div>
+</body>
+</html>

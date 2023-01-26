@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementById</title>
+    <!-- html ㅐㅌ그의 id 특성값을  -->
+    <script language = "javascript">
+        function sayHello(){
+            // getElemntById 메서드를 통해 텍스트에 입력된 Id를 가져옴
+            var textBox = document.getElementById("myName");
+            if(textBox != null)
+            {
+                alert(textBox.value +"님 안녕하세요");
+                //.value를 통해 값을 가져옴
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="myName">
+    <input type="button" value="인사하기" onclick="sayHello()"><br>
+
+  
+</body>
+</html>

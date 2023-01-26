@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByTagName 메서드</title>
+    <script language = "javascript">
+       
+       function findSubject(){
+            var arrRadio = document.getElementsByTagName("input");
+            // arrRadio 버튼이 배열임을 알 수 있음 input태그가 여러 값을 가지고 있기에
+            for (var i=0; i<arrRadio.length;i++){
+                if(arrRadio[i].type=="radio" && arrRadio[i].checked){
+                    //버튼도 input 태그라 타입을 radio인 것과 체크된 것으로 조건을 걸었음
+                    alert(arrRadio[i].value + "과목을 좋아하시는 군요");
+                    //.value를 통해 그 값을 가져옴
+                    break;
+                }
+            }
+       }
+       
+    </script>
+</head>
+<body>
+    <h1>제일 좋아하는 과목은?</h1><br>
+
+    <input type="radio" name="subject" value="HTML">HTML<br>
+    <input type="radio" name="subject" value="CSS">CSS<br>
+    <input type="radio" name="subject" value="자바스크립트">자바스크립트<br>
+    <input type="button" value="답안지 제출" onclick="findSubject()">
+</body>
+</html>
