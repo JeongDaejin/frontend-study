@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <link rel="stylesheet" href="./cal.css">
+    <script src ="cal.js"></script>
+    
+</head>
+
+<body>
+    <form name="forms">
+        <input type="text" style="width:180pt; text-align:right;" id="field" readonly><br>
+
+        <input type="button" class="button1" style="width: 65pt" value="Clear" onclick="Clear()">
+        <input type="button" style="width: 65pt" value="=" onclick="equls()"><br>
+
+        <input type="button" class="button1" style="width: 30pt" value="1" onclick="add(value)">
+        <input type="button" class="button1" style="width: 30pt" value="2" onclick="add(value)">
+        <input type="button" class="button1" style="width: 30pt" value="3" onclick="add(value)">
+        <input type="button" class="button2" id="+" style="width: 30pt" value="+" onclick="Oper(value)">
+        <input type="button" class="button3" style="width: 30pt" value="^" onclick="Oper(value)"><br>
+
+        <input type="button" class="button1" style="width: 30pt" value="4" onclick="add(value)">
+        <input type="button" class="button1" style="width: 30pt" value="5" onclick="add(value)">
+        <input type="button" class="button1" style="width: 30pt" value="6" onclick="add(value)">
+        <input type="button" class="button2" style="width: 30pt" value="-" onclick="Oper(value)">
+        <input type="button" class="button3" style="width: 30pt" value="sin" onclick="sin()"><br>
+
+        <input type="button" class="button1" style="width: 30pt" value="7" onclick="add(value)">
+        <input type="button" class="button1" style="width: 30pt" value="8" onclick="add(value)">
+        <input type="button" class="button1" style="width: 30pt" value="9" onclick="add(value)">
+        <input type="button" class="button2" style="width: 30pt" value="*" onclick="Oper(value)">
+        <input type="button" class="button3" style="width: 30pt" value="cos" onclick="cos()"><br>
+
+        <input type="button" class="button1" style="width: 30pt" value="0" onclick="add(value)">
+        <input type="button" class="button1" style="width: 30pt" value="+/-" onclick="change()">
+        <input type="button" class="button1" style="width: 30pt" value="." onclick="dot(value)">
+        <input type="button" class="button2" style="width: 30pt" value="/" onclick="Oper(value)">
+        <input type="button" class="button3" style="width: 30pt" value="tan" onclick="tan()">
+
+
+</body>
+
+</html>

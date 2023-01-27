@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>계산기</title>
+</head>
+<style>
+button{
+	color : blue;
+}
+button.oper{
+	color : #40ff00;
+}
+button.math{
+	color : red;
+}
+</style>
+<body>
+
+<div style="justify-content: center; text-align: center;">
+<br><hr><h3>계산기</h3>
+	<div style="justify-content: center; align-items: center;">
+		<input type="text" id="input" value="" style="text-align: right;"> <br />
+			<button onclick=claer() style="width: 70px;">Clear</button>
+			<button onclick=calc() style="width: 70px;">=</button>
+		<div style="justify-content: center; text-align: center;">
+		<table style="margin-left: auto; margin-right: auto">
+			<tr>
+				<td><button class="button" value="1" onclick=clickNum(this.value)>1</button></td>
+				<td><button class="button" value="2" onclick=clickNum(this.value)>2</button></td>
+				<td><button class="button" value="3" onclick=clickNum(this.value)>3</button></td>
+				<td><button class="oper" value="+" onclick=clickOper(this.value)>+</button></td>
+				<td><button class="math" value="^" onclick=clickOper(this.value)>x^y</button></td>
+			</tr>
+			<tr>
+				<td><button class="button" value="4" onclick=clickNum(this.value)>4</button></td>
+				<td><button class="button" value="5" onclick=clickNum(this.value)>5</button></td>
+				<td><button class="button" value="6" onclick=clickNum(this.value)>6</button></td>
+				<td><button class="oper" value="-" onclick=clickOper(this.value)>-</button></td>
+				<td><button class="math" onclick=sin()>sin</button></td>
+			</tr>
+			<tr>
+				<td><button class="button" value="7" onclick=clickNum(this.value)>7</button></td>
+				<td><button class="button" value="8" onclick=clickNum(this.value)>8</button></td>
+				<td><button class="button" value="9" onclick=clickNum(this.value)>9</button></td>
+				<td><button class="oper" value="*" onclick=clickOper(this.value)>*</button></td>
+				<td><button class="math" onclick=cos()>cos</button></td>
+			</tr>
+			<tr>
+				<td><button class="button" value="0" onclick=clickNum(this.value)>0</button></td>
+				<td><button class="button" onclick=clickConversion()>+/-</button></td>
+				<td><button class="button" onclick=clickDot()>.</button></td>
+				<td><button class="oper" value="/" onclick=clickOper(this.value)>/</button></td>
+				<td><button class="math" onclick=tan()>tan</button></td>
+			</tr>
+		</table>
+		</div>
+	</div>
+
+</div>
+</body>
+
+<script>
+    var num1;
+    var num2;
+    var operator;
+
+    // 숫자 입력
+    function clickNum(n){
+        if(document.getElementById("input").value == null){
+            document.getElementById("input").value = n;
+        } else {
+            document.getElementById("input").value += n;
+        }
+    }
+    
+	// claer 초기화
+	function claer(){
+       var num1 = '';
+       var num2 = '';
+       var oper = '';
+       document.getElementById("input").value = '';
+	}
+
+    // 연산자 입력
+    function clickOper(oper){
+        num1 = document.getElementById("input").value;
+        
+        document.getElementById("input").value = '';                
+        operator = oper; //받은 연산자 operator에 저장
+    }
+
+    // 점 입력
+    function clickDot(){
+        if(document.getElementById("input").value.indexOf('.') == -1){
+            document.getElementById("input").value += '.';
+        }
+    }
+
+    // = 입력
+    function calc(){
+        num2 = document.getElementById("input").value;
+        clac();
+    }
+
+    // +/- 입력
+    function clickConversion(){
+        n = document.getElementById("input").value;
+        if(Number(n)>0) {
+            document.getElementById("input").value = '-' + n;
+        } else {
+            document.getElementById("input").value = n.replace('-','');
+        }
+    }
+
+    // 계산
+    function clac(){
+        switch(operator){ // 연산자 입력으로 받은
+            case '+':
+              document.getElementById("input").value = String(Number(num1) + Number(num2));
+              break;
+            case '-':
+              document.getElementById("input").value = String(Number(num1) - Number(num2));
+              break;
+            case '*':
+              document.getElementById("input").value = String(Number(num1) * Number(num2));
+              break;
+            case '/':
+              document.getElementById("input").value = String(Number(num1) / Number(num2));
+              break;
+            case '^':
+            document.getElementById("input").value = String(Number(num1) ** Number(num2));
+            break; 
+        }
+        num1 = '';
+        operator = '';
+    }
+
+    
+    //공학용 계산
+    function tan() {
+        n = document.getElementById("input").value;
+        document.getElementById("input").value = Math.tan((n*3.141592)/180);
+    }
+    function sin() {
+        n = document.getElementById("input").value;
+        document.getElementById("input").value = Math.sin((n*3.141592)/180);
+    }
+    function cos() {
+        n = document.getElementById("input").value;
+        document.getElementById("input").value = Math.cos((n*3.141592)/180);
+    }
+</script>
+</html>

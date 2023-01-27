@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="javascript">
+        
+        var color ='red'; //전역
+
+        function foo(){
+            var color = 'blue'; //2 지역
+            function bar(){
+                document.write(color);//1
+            }
+            return bar;
+        }
+        var baz = foo();; //3
+        baz(); //4
+    </script>   
+</head>
+<body>
+    
+</body>
+</html>
+
+<!-- 순서 
+이름이 같을때는 지역이 우선
+bar()는 호출되지 않았음
+리턴으로 bar 함수를 반환함
+var baz = foo() 이뜻은 foo에 bar가 들어감
+baz()는 bar가 실행됨
+color에서 red가 나와야함
+근데 왜 blue가 나오냐?
+
+var입장에서 아우터가 foo임
+클로저
+
+이너클래스라 같다고 생각하면 댐
+
+bar()를 기준으로 foo()함수는 전역으로 봄
+
+1. 장점 -->
