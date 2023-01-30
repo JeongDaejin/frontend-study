@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지</title>
+    <script src="/Javascript/1월30일/join.js">
+        
+    </script>
+</head>
+
+<body>
+    <form>
+        <table width="600" height="250" border="1" Cellspacing="0" align="center">
+            <tr>
+                <td colspan="2" align="center" style="background-color:rgb(134, 157, 221)"><b>회원기본정보</td>
+            </tr>
+            <tr>
+                <td align="center" style="background-color:rgb(224, 195, 223)"> <b>아이디:</td>
+                <td><input type="text" id="userID" size="12" minlength="4" maxlength="12">4~12자의 영문 대소문자와 숫자로만 입력</td>
+            </tr>
+            <tr>
+                <td align="center" style="background-color:rgb(224, 195, 223)"><b>비밀번호:</td>
+                <td><input type="password" id="userPassword" size="12" minlength="4" maxlength="12">4~12자의 영문 대소문자와 숫자로만
+                    입력</td>
+            </tr>
+            <tr>
+                <td align="center" style="background-color:rgb(224, 195, 223)"><b>비밀번호확인:</td>
+                <td><input type="password" id="checkPassword" size="12" minlength="4" maxlength="12"></td>
+            </tr>
+            <tr>
+                <td align="center" style="background-color:rgb(224, 195, 223)"><b>메일주소:</td>
+                <td><input type="text" id="email" size="20">예) id@domain.com</td>
+            </tr>
+            <tr>
+                <td align="center" style="background-color:rgb(224, 195, 223)"><b>이름:</td>
+                <td><input type="text" id="name" size="20"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" style="background-color:rgb(134, 157, 221)"><b>개인 신상 정보</td>
+            </tr>
+            <tr>
+                <td align="center" style="background-color:rgb(224, 195, 223)"><b>주민등록번호:</td>
+                <td><input type="password" id="UID" size="13" maxlength="13">예) 1234561234567</td>
+            </tr>
+            <tr>
+                <td align="center" style="background-color:rgb(224, 195, 223)"><b>생일:</td>
+                <td><input type="text" id="year" size="4">년
+                    <select name="month">
+                        <option value="01">1</option>
+                        <option value="02">2</option>
+                        <option value="03">3</option>
+                        <option value="04">4</option>
+                        <option value="05">5</option>
+                        <option value="06">6</option>
+                        <option value="07">7</option>
+                        <option value="08">8</option>
+                        <option value="09">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    월
+                    <select name="day">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        일
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="background-color:rgb(224, 195, 223)"><b>관심분야:</td>
+                <td><input type="checkbox" name="hobby">컴퓨터
+                    <input type="checkbox" name="hobby">인터넷
+                    <input type="checkbox" name="hobby">여행
+                    <input type="checkbox" name="hobby">영화감상
+                    <input type="checkbox" name="hobby">음악감상
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="background-color:rgb(224, 195, 223)"><b>자기소개:</td>
+                <td><textarea id="my_intro" cols="50" rows="5"></textarea></td>
+            </tr>
+        </table>
+        <br>
+
+        <p align="center">
+            <a> <input type="button" align="center" value="회원 가입" onclick="join()"></a>
+            <input type="reset" value="다시입력">
+        </p>
+        <p align="center">
+            <audio controls autoplay>
+                <source src="Ice&Fire-King_Canyon.mp3" type="audio/mpeg">
+            </audio>
+        </p>
+    </form>
+</body>
+
+</html>
