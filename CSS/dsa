@@ -1,0 +1,35 @@
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+import java.util.Calendar;
+
+public class ServletTest extends HttpServlet{
+    //@오버라이드
+    public void doGet(HttpServletRequest request, HttpServletRequest response) THROWS IOEx{
+        //요청과 응답
+        //get url 그대로 가져옴
+        response.setContentType("text/html");
+        response.setCharacterEncoding("euc-kr");
+        //html 형식이며 한글지원
+
+        Calendar c=Calendar.getInstance();
+        //Calendar 객체 스태틱으로 생성
+
+        int hour=c.get(Calendar.HOUR_OF_DAY);
+        int minute=c.get(Calendar.MINUTE);
+        int second=c.get(Calendar.SECOND);
+
+        PrintWriter out=response.getWriter();
+        
+        out.write("<HTML><HEAD><TITLE>ServletTest</TITLE></HEAD>");
+        out.write("현재시작은 ");
+        out.write(Integer.toString(hour));
+        out.write("시");
+        out.write(Interger.toString(minute));
+        out.write("분 ");
+        out.write(Integer.toString(second));
+        out.write("초입니다.");
+        out.write("</H1></BODY></HTML>");
+        out.close();
+        }
+}

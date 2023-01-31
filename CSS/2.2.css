@@ -1,0 +1,14 @@
+body{
+    line-height: 170%;
+}
+
+h2{
+    font-family: 돋움;
+    font-size: 14pt;
+    color: blue;
+}
+
+span {
+    color: green;
+    font-weight: bold;
+}
