@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script language="javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<form name="data" method="post" onsubmit="return checks()"> 
+      
+        <table width="600" height="250" border="1" Cellspacing="0" align="center">
+        <tbody>
+        <tr>
+            <td colspan="2" align="center" style="background-color:rgb(134, 157, 221)"><b>회원기본정보</td>
+        </tr>
+        <tr>
+            <td align="center" style="background-color:rgb(224, 195, 223)"> <b>아이디:</td>
+            <td><input size="15" type="text" id="id"> 4~12자의 영문 대소문자와 숫자로만 입력</td>
+        </tr>
+        <tr>
+            <td align="center" style="background-color:rgb(224, 195, 223)"><b>비밀번호:</td>
+            <td><input size="15" type="password" id="password"> 4~12자의 영문 대소문자와 숫자로만 입력</td>
+        </tr>
+        <tr>
+            <td align="center" style="background-color:rgb(224, 195, 223)"><b>비밀번호확인:</td>
+            <td><input size="15" type="password" id="password_check"></td>
+        </tr>
+        <tr>
+            <td align="center" style="background-color:rgb(224, 195, 223)"><b>메일주소:</td>
+            <td><input type="text" id="mail"> 예) id@domain.com</td>
+        </tr>
+        <tr>
+            <td align="center" style="background-color:rgb(224, 195, 223)"><b>이름:</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center" style="background-color:rgb(134, 157, 221)"><b>개인 신상 정보</td>
+            </tr>
+        </tr>
+        <tr>
+             <td align="center" style="background-color:rgb(224, 195, 223)"><b>주민등록번호:</td>
+            <td>
+                <input size="7" type="text" id="id_num">
+                - <input size="7" type="password" id="id_num_back">
+                예)123456-1234567
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="background-color:rgb(224, 195, 223)"><b>생일:</td>
+             <td><input type="text" AUTOCOMPLETE="off" name ="year" id="year" size="4" readonly  disabled><b> 년</b>
+                 <input type="text" AUTOCOMPLETE="off" name ="month" id="month" style="width: 20px;" readonly  disabled><b> 월</b>    
+                 <input type="text" AUTOCOMPLETE="off" name ="date" id="date" style="width: 20px;"" readonly  disabled><b> 일</b>
+               </td>    
+        </tr>
+        <tr>
+            <td align="center" style="background-color:rgb(224, 195, 223)"><b>관심분야:</td>
+            <td>
+                <input type="checkbox" name="hobby[]" value="computer">컴퓨터
+                <input type="checkbox" name="hobby[]" value="internet">인터넷
+                <input type="checkbox" name="hobby[]" value="travel">여행
+                <input type="checkbox" name="hobby[]" value="movie">영화감상
+                <input type="checkbox" name="hobby[]" value="music">음악감상
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="background-color:rgb(224, 195, 223)"><b>자기소개:</td>
+            <td><textarea cols="50" rows="5" id="intro"></textarea>
+                <!--크기 조정 가능-->
+            </td>
+        </tr>
+    </tbody>
+    </table>
+        <p align="center">
+            <a> <input type="submit" align="center" value="회원 가입"></a>
+            <!--누르면 메일이 보내짐-->
+            <input type="reset" value="다시 입력"> 
+            <!--누르면 초기화-->
+        </p>
+        <p align="center">
+            <audio controls autoplay>
+                <source src="Ice&Fire-King_Canyon.mp3" type="audio/mpeg">
+            </audio>
+</form>
+</body>
