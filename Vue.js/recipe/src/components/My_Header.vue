@@ -1,7 +1,7 @@
 <template>
     <v-app-bar absolute app light style="background-color: white; ">
         <v-spacer/>
-        <v-img src="../assets/logo.png" max-width="60" contain></v-img>
+        <v-img src="../assets/쿡플레.png" max-width="60" contain></v-img>
         <input type="text"  value="" placeholder="찾을 내용을 입력하세요." style="">
         <button type="button">검색</button>
         <v-spacer/>
